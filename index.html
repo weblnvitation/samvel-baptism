@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Մկրտության Հրավեր</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Մկրտության Հրավեր</h1>
+        <p>Հրավիրված եք կիսելու այս սրբազան խորհրդության ուրախությունը</p>
+      </header>
+
+      <section class="envelope-section">
+        <div class="envelope-container" id="envelope">
+          <img
+            src="./images/close envelope.png"
+            alt="Closed Envelope"
+            class="envelope-img"
+            id="closed-envelope"
+          />
+          <img
+            src="./images/open envelope.png"
+            alt="Open Envelope"
+            class="envelope-img"
+            id="open-envelope"
+          />
+
+          <div class="angels-container">
+            <img src="./images/angels boy.png" alt="Angel" class="angel left" />
+            <img
+              src="./images/angel girl.png"
+              alt="Angel"
+              class="angel right"
+            />
+          </div>
+        </div>
+
+        <p class="instruction">Սեղմեք ծրարը հրավերը բացելու համար</p>
+
+        <!-- Animated Scroll Indicator -->
+        <img
+          src="https://static.tildacdn.one/tild3436-6131-4933-b830-623861383537/Frame_1131.png"
+          style="
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+          "
+          alt="Scroll Down"
+          onclick="document.getElementById('details').scrollIntoView({behavior: 'smooth'})"
+        />
+      </section>
+
+      <section class="details-section" id="details">
+        <h2 class="section-title">Օրվա ծրագիր</h2>
+
+        <!-- Church Event -->
+        <div class="event-block">
+          <img
+            src="./images/church.png"
+            style="width: 150px; height: 150px; object-fit: contain"
+            alt="Church"
+            class="event-icon-img"
+          />
+          <div class="event-info">
+            <h3>St. Mary's Church</h3>
+            <p>Saturday, June 15th at 2:00 PM</p>
+            <img
+              src="./images/location.png"
+              style="width: 70px; height: 70px; object-fit: contain"
+              alt="Church"
+              class="event-icon-img"
+            />
+            <p>123 Sanctuary Lane, Serenity Valley</p>
+          </div>
+          <a href="#" class="location-btn">View Location</a>
+        </div>
+
+        <!-- Reception Event -->
+        <div class="event-block">
+          <img
+            src="./images/banquet hall.png"
+            style="width: 150px; height: 150px; object-fit: contain"
+            alt="Church"
+            class="event-icon-img"
+          />
+          <div class="event-info">
+            <h3>St. Mary's Church</h3>
+            <p>Saturday, June 15th at 2:00 PM</p>
+            <img
+              src="./images/banquet.png"
+              style="width: 70px; height: 70px; object-fit: contain"
+              alt="Church"
+              class="event-icon-img"
+            />
+            <p>123 Sanctuary Lane, Serenity Valley</p>
+          </div>
+          <a href="#" class="location-btn">View Location</a>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+          "
+        >
+          <img
+            src="./images/baby.jpg"
+            style="width: 400px; height: 400px; object-fit: cover"
+            alt="Baby"
+            class="event-icon-img"
+          />
+          <div class="event-info">
+            <h3>Baby Grace</h3>
+            <p>Daughter of Michael & Sarah Johnson</p>
+          </div>
+        </div>
+        <!-- Bible Verse -->
+        <div class="bible-verse">
+          "Թողե՛ք, որ մանուկները գան ինձ մե՛ջ, և մի՛ արգելեք նրանց, որովհետև
+          երկնքի արքայությունը նրանցն է:" - Մատթեոս 19:14
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="rsvp-form">
+          <h3>Կմասնակցե՞ք</h3>
+          <div class="rsvp-options">
+            <label class="rsvp-option">
+              <input type="radio" name="attendance" value="yes" />
+              <span>Այո, կմասնակցեմ</span>
+            </label>
+            <label class="rsvp-option">
+              <input type="radio" name="attendance" value="no" />
+              <span>Ներողություն, չեմ կարող</span>
+            </label>
+          </div>
+          <p>Խնդրում ենք պատասխանել մինչև Հունիսի 1-ը</p>
+          <button class="rsvp-submit">Հաստատել պատասխանը</button>
+        </div>
+      </section>
+
+      <footer>
+        <p>Սիրով, Հարությունյանների ընտանիք</p>
+      </footer>
+    </div>
+
+    <style>
+      /* Add the bounce animation */
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const envelope = document.getElementById("envelope");
+        const detailsSection = document.getElementById("details");
+        const rsvpSubmit = document.querySelector(".rsvp-submit");
+
+        // Open envelope when clicked
+        envelope.addEventListener("click", function () {
+          envelope.classList.add("open");
+
+          // Show details section after a delay but DON'T scroll to it
+          setTimeout(function () {
+            detailsSection.classList.add("visible");
+            // Removed the scrollIntoView for details section
+          }, 1500);
+        });
+
+        // Show details section when scrolling
+        window.addEventListener("scroll", function () {
+          const scrollPosition = window.scrollY;
+          const windowHeight = window.innerHeight;
+
+          if (scrollPosition > windowHeight / 2) {
+            detailsSection.classList.add("visible");
+          }
+        });
+
+        // RSVP form submission
+        rsvpSubmit.addEventListener("click", function () {
+          const selectedOption = document.querySelector(
+            'input[name="attendance"]:checked'
+          );
+
+          if (!selectedOption) {
+            alert("Խնդրում ենք ընտրել տարբերակ նախքան ուղարկելը:");
+            return;
+          }
+
+          if (selectedOption.value === "yes") {
+            alert(
+              "Շնորհակալություն հաստատելու համար: Ցանկանում ենք տոնել Ձեր հետ:"
+            );
+          } else {
+            alert("Շնորհակալություն տեղեկացնելու համար: Կբացակայեք:");
+          }
+
+          // Reset form
+          document
+            .querySelectorAll('input[name="attendance"]')
+            .forEach((input) => {
+              input.checked = false;
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
