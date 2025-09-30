@@ -286,6 +286,12 @@ header p {
   border-radius: 0 10px 10px 0;
 }
 
+.event-icon-img {
+  width: 400px;
+  height: 400px;
+  object-fit: "cover";
+}
+
 .rsvp-form {
   background: #f8f9fa;
   padding: 25px;
@@ -342,6 +348,37 @@ header p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Prevent zoom on form inputs in mobile */
+.rsvp-form input[type="text"],
+.rsvp-form input[type="radio"] {
+  font-size: 16px; /* Prevents iOS zoom */
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.rsvp-form {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure form elements don't change size on mobile */
+.rsvp-option span {
+  font-size: 16px;
+}
+
+.rsvp-submit {
+  font-size: 16px;
+}
+
+/* Prevent any scaling transformations */
+#guest-name {
+  transform: none !important;
+}
+
+.rsvp-options {
+  transform: none !important;
+}
+
 footer {
   text-align: center;
   padding: 30px 0;
@@ -376,6 +413,12 @@ footer {
     font-size: 1.8rem;
   }
 
+  .event-icon-img {
+    width: 350px;
+    height: 350px;
+    object-fit: "cover";
+  }
+
   .rsvp-options {
     flex-direction: column;
     gap: 10px;
@@ -402,6 +445,12 @@ footer {
   .angel.right {
     right: 40px;
     top: 70px;
+  }
+
+  .event-icon-img {
+    width: 350px;
+    height: 350px;
+    object-fit: "cover";
   }
 
   .details-section {
