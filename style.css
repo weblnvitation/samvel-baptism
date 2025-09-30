@@ -15,6 +15,65 @@ body {
   overflow-x: hidden;
 }
 
+.music-toggle {
+  width: 40px;
+  height: 40px;
+  margin: 0px 0px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.music-toggle::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f026"; /* fa-volume-mute */
+}
+
+.music-toggle.playing::before {
+  content: "\f028"; /* fa-volume-up */
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@font-face {
+  font-family: "SHK Dzeragir";
+  src: url("./fonts/SHK_Dzeragir\ 2.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arti Regular";
+  src: url("./fonts/Arti\ Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container h1,
+.section-title,
+.event-info h3 {
+  font-family: "SHK Dzeragir", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.container p {
+  font-family: "Arti Regular", serif;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,6 +111,7 @@ header p {
 }
 
 .envelope-container {
+  margin-top: 100px !important;
   position: relative;
   width: 500px;
   height: 375px;
@@ -131,13 +191,9 @@ header p {
   font-style: italic;
 }
 
-/* Details Section - Redesigned */
 .details-section {
-  background: white;
-  border-radius: 20px;
   padding: 50px 40px;
   margin: 40px auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   opacity: 0;
   transform: translateY(30px);
@@ -173,14 +229,11 @@ header p {
 }
 
 .event-block {
-  background-image: url("./images/sky\ background.jpg");
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 25px;
-  background: #f8f9fa;
-  border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -190,6 +243,7 @@ header p {
 
 .event-info h3 {
   font-size: 1.5rem;
+  margin-top: 10px;
   margin-bottom: 10px;
   color: #2c3e50;
 }
@@ -215,15 +269,16 @@ header p {
 }
 
 .location-btn:hover {
-  background: #2980b9;
+  background: #cda66e;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .bible-verse {
+  font-family: "SHK Dzeragir", serif;
   text-align: center;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: #7f8c8d;
   padding: 20px;
   border-left: 4px solid #987757;
@@ -262,7 +317,7 @@ header p {
 }
 
 .rsvp-option:hover {
-  background: rgba(52, 152, 219, 0.1);
+  background: #d8d5d2;
 }
 
 .rsvp-option input {
@@ -271,7 +326,7 @@ header p {
 
 .rsvp-submit {
   background: #987757;
-  color: white;
+  color: #eedfcb;
   border: none;
   padding: 12px 30px;
   border-radius: 50px;
@@ -282,7 +337,7 @@ header p {
 }
 
 .rsvp-submit:hover {
-  background: #c0392b;
+  background: #cda66e;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -291,19 +346,20 @@ footer {
   text-align: center;
   padding: 30px 0;
   color: #7f8c8d;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .envelope-container {
+    margin-top: 50px !important;
     width: 400px;
     height: 300px;
   }
 
   .angel {
     width: 100px;
-    height: 100px;
+    height: 120px;
   }
 
   .angel.left {
@@ -328,13 +384,14 @@ footer {
 
 @media (max-width: 480px) {
   .envelope-container {
+    margin-top: 50px !important;
     width: 320px;
     height: 240px;
   }
 
   .angel {
     width: 80px;
-    height: 80px;
+    height: 100px;
   }
 
   .angel.left {

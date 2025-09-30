@@ -13,11 +13,12 @@
   <body>
     <div class="container">
       <header>
+        <div class="music-toggle" id="musicToggle"></div>
         <h1>Մկրտության Հրավեր</h1>
         <p>Հրավիրված եք կիսելու այս սրբազան խորհրդության ուրախությունը</p>
       </header>
-
       <section class="envelope-section">
+        <!-- Music Toggle Button -->
         <div class="envelope-container" id="envelope">
           <img
             src="./images/close envelope.png"
@@ -43,14 +44,13 @@
         </div>
 
         <p class="instruction">Սեղմեք ծրարը հրավերը բացելու համար</p>
-
         <!-- Animated Scroll Indicator -->
         <img
           src="https://static.tildacdn.one/tild3436-6131-4933-b830-623861383537/Frame_1131.png"
           style="
-            width: 50px;
-            height: 50px;
-            margin-top: 20px;
+            width: 40px;
+            height: 40px;
+            margin-top: 60px;
             animation: bounce 2s infinite;
             cursor: pointer;
           "
@@ -71,17 +71,22 @@
             class="event-icon-img"
           />
           <div class="event-info">
-            <h3>St. Mary's Church</h3>
-            <p>Saturday, June 15th at 2:00 PM</p>
+            <h3>Սուրբ Սարգիս եկեղեցի</h3>
+            <p>Շաբաթ, հունիսի 15, ժամը 14:00</p>
             <img
               src="./images/location.png"
               style="width: 70px; height: 70px; object-fit: contain"
               alt="Church"
               class="event-icon-img"
             />
-            <p>123 Sanctuary Lane, Serenity Valley</p>
+            <p>Իսրայելյան փող. 21</p>
           </div>
-          <a href="#" class="location-btn">View Location</a>
+          <a
+            href="https://yandex.com/maps/-/CLu2VDyd"
+            target="_blank"
+            class="location-btn"
+            >Ինչպես հասնել</a
+          >
         </div>
 
         <!-- Reception Event -->
@@ -93,17 +98,22 @@
             class="event-icon-img"
           />
           <div class="event-info">
-            <h3>St. Mary's Church</h3>
-            <p>Saturday, June 15th at 2:00 PM</p>
+            <h3>«ՆՈՐ ԴՎԻՆ» ՌԵՍՏՈՐԱՆ</h3>
+            <p>Շաբաթ, հունիսի 15, ժամը 17:30</p>
             <img
               src="./images/banquet.png"
               style="width: 70px; height: 70px; object-fit: contain"
               alt="Church"
               class="event-icon-img"
             />
-            <p>123 Sanctuary Lane, Serenity Valley</p>
+            <p>ք․ Էջմիածին Աշտարակի խճուղի, 1 շենք</p>
           </div>
-          <a href="#" class="location-btn">View Location</a>
+          <a
+            href="https://yandex.com/maps/-/CLu2bAzi"
+            target="_blank"
+            class="location-btn"
+            >Ինչպես հասնել</a
+          >
         </div>
 
         <div
@@ -122,8 +132,8 @@
             class="event-icon-img"
           />
           <div class="event-info">
-            <h3>Baby Grace</h3>
-            <p>Daughter of Michael & Sarah Johnson</p>
+            <h3>Մանուկ Սամվել</h3>
+            <p>Աշոտ և Սաթենիկ Հարությունյանների որդին</p>
           </div>
         </div>
         <!-- Bible Verse -->
@@ -145,8 +155,30 @@
               <span>Ներողություն, չեմ կարող</span>
             </label>
           </div>
+
+          <!-- Name input -->
+          <div style="margin: 15px 0">
+            <label>
+              Ձեր անունը:
+              <input
+                type="text"
+                id="guest-name"
+                placeholder="Ձեր անունը"
+                style="
+                  padding: 8px;
+                  margin-top: 5px;
+                  width: 100%;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                "
+              />
+            </label>
+          </div>
+
           <p>Խնդրում ենք պատասխանել մինչև Հունիսի 1-ը</p>
-          <button class="rsvp-submit">Հաստատել պատասխանը</button>
+          <button class="rsvp-submit" onclick="sendToWhatsApp()">
+            Ուղարկել պատասխանը
+          </button>
         </div>
       </section>
 
@@ -229,5 +261,6 @@
         });
       });
     </script>
+    <script src="./script.js"></script>
   </body>
 </html>
